@@ -1,0 +1,25 @@
+ul {
+  float: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li.cd {
+  display: inline;
+  margin: 0 0.4rem;
+  font-size: 2rem;
+  font-family: "DIN Round Web";
+}
+
+.cd_hours, .cd_minutes {
+  color: #525E66;
+}
+
+.cd_seconds {
+  color: #B70062;
+}
+
+h5.cd {
+  color: #525E66;
+}

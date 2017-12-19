@@ -1,0 +1,96 @@
+*:before,
+:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c-clock {
+  transform: scale(0.8);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 2px solid #8C8C8D;
+}
+
+.c-clock:after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: #34495e;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #525E66;
+  z-index: 3;
+}
+.c-clock .c-clock__tick {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transform-origin: bottom center;
+  text-align: center;
+}
+.c-clock .c-clock__tick.c-clock__tick--hours {
+  width: 10px;
+  height: 150px;
+  background: #525E66;
+  z-index: 2;
+  transform: translate(-50%, -100%);
+  border-radius: 20px 20px 0 0;
+}
+.c-clock .c-clock__tick.c-clock__tick--minutes {
+  width: 10px;
+  height: 200px;
+  background: #525E66;
+  z-index: 2;
+  transform: translate(-50%, -100%);
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+
+.c-clock .c-clock__tick.c-clock__tick--seconds {
+  width: 6px;
+  height: 200px;
+  background: #B70062;
+  z-index: 3;
+  transform: translate(-50%, -100%);
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .c-clock {
+    height: 350px;
+    width: 350px;
+  }
+
+  .c-clock:after {
+    height: 5px;
+    width: 5px;
+  }
+
+  .c-clock .c-clock__tick.c-clock__tick--hours {
+    height: 75px;
+    width: 3px;
+  }
+
+  .c-clock .c-clock__tick.c-clock__tick--minutes {
+    height: 125px;
+    width: 3px;
+  }
+
+  .c-clock .c-clock__tick.c-clock__tick--seconds {
+    height: 125px;
+    width: 2px;
+  }
+}
+

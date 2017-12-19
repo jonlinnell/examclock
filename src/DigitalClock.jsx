@@ -1,26 +1,14 @@
 import React, { Component } from 'react';
 import './DigitalClock.css';
 
-class DigitalClock extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      time: 'Loading...'
-    };
-
-    setInterval(() => {
-      this.setState({ time: Date.now() });
-    }, 1000);
-  }
-  getDateString() {
-    const date = new Date;
-    return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-  }
+export default class DigitalClock extends Component {
   render() {
     return(
-      <h1>{this.getDateString()}</h1>
+      <ul>
+        <li className={'hours ' + this.props.size}>{isNaN(this.props.hours) ? '00' : this.props.hours}</li>
+        <li className={'minutes ' + this.props.size}>{isNaN(this.props.minutes) || (this.props.minutes === 60)  ? '00' : this.props.minutes}</li>
+        <li className={'seconds ' + this.props.size}>{isNaN(this.props.seconds) || (this.props.seconds === 60) ? '00' : this.props.seconds}</li>
+      </ul>
     )
   }
 }
-
-export default DigitalClock;
