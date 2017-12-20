@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import padZero from "../../lib/padZero";
 import DigitalClock from "./DigitalClock";
 import "../../stylesheets/TimeRemaining.css";
 
@@ -24,7 +23,7 @@ export default class TimeRemaining extends Component {
   componentWillReceiveProps(newProps) {
     this.syncTime(newProps)
   }
-  
+
   render() {
     return (
       <div>

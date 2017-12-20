@@ -9,7 +9,6 @@ import { addError, updateCurrentTime } from './actions'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import registerServiceWorker from './registerServiceWorker'
 
 import './stylesheets/index.css'
 
@@ -58,5 +57,3 @@ ReactDOM.render(
     </MuiThemeProvider>
   </Provider>,
   document.getElementById('root'))
-
-registerServiceWorker()
