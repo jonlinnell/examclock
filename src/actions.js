@@ -1,4 +1,5 @@
 import C from './constants'
+import { rationaliseTime } from './lib/calcTime'
 
 export const updateCurrentTime = time =>
   ({
@@ -7,7 +8,7 @@ export const updateCurrentTime = time =>
   })
 
 export const setDeadline = (deadline) => {
-  let rationalisedTime = new Date(deadline)
+  let rationalisedTime = rationaliseTime(deadline)
   rationalisedTime.setSeconds(0, 0)
   rationalisedTime.setSeconds(rationalisedTime.getSeconds() + 1)
 
@@ -23,7 +24,7 @@ export const clearDeadline = () =>
   })
 
 export const setStart = (start) => {
-  let rationalisedTime = new Date(start)
+  let rationalisedTime = rationaliseTime(start)
   rationalisedTime.setSeconds(0, 0)
 
   return ({

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import AnalogueClock from './components/containers/AnalogueClock';
-import TimeDigital from './components/containers/TimeDigital';
-import TimeRemaining from './components/containers/TimeRemaining';
-import Config from './components/containers/Config';
-import TimeElapsed from './components/containers/TimeElapsed';
-import logo from './logo.png';
-import 'bootstrap/dist/css/bootstrap.css';
-import './stylesheets/App.css';
+import React, { Component } from 'react'
+import AnalogueClock from './components/containers/AnalogueClock'
+import TimeDigital from './components/containers/TimeDigital'
+import TimeRemaining from './components/containers/TimeRemaining'
+import Config from './components/containers/Config'
+import TimeElapsed from './components/containers/TimeElapsed'
+import logo from './logo.png'
+import 'bootstrap/dist/css/bootstrap.css'
+import './stylesheets/App.css'
 
 export default class App extends Component {
   render() {
@@ -39,6 +39,6 @@ export default class App extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }

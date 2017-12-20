@@ -12,8 +12,11 @@ const consoleMessages = store => next => action => {
 
   console.log(`
 
+    Action:
+${JSON.stringify(action, null, 2)}
+
     State:
-    ${JSON.stringify(store.getState())}
+${JSON.stringify(store.getState(), null, 2)}
 
   `)
 
@@ -23,5 +26,5 @@ const consoleMessages = store => next => action => {
 }
 
 export default (initialState={}) => {
-  return applyMiddleware()(createStore)(appReducer, initialState)
+  return applyMiddleware(consoleMessages)(createStore)(appReducer, initialState)
 }

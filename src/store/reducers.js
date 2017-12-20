@@ -34,8 +34,26 @@ export const start = (state=null, action) => {
   }
 }
 
+export const errors = (state=null, action) => {
+  switch (action.type) {
+
+    case C.ADD_ERROR :
+      return [
+        ...state,
+        action.payload
+      ]
+
+    case C.CLEAR_ERROR :
+      return state.filter((message, i) => i !== action.payload)
+
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   currentTime,
   deadline,
-  start
+  start,
+  errors
 })

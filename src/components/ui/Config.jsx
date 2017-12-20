@@ -56,14 +56,14 @@ export default class Config extends React.Component {
             hintText='Exam Starts...'
             pedantic={true}
             autoOk={true}
-            value={this.props.start}
+            value={new Date(this.props.start)}
             onChange={this.props.onSetStart}
           />
           <TimePicker
             hintText='Exam Ends...'
             pedantic={true}
             autoOk={true}
-            value={this.props.deadline}
+            value={new Date(this.props.deadline)}
             onChange={this.props.onSetDeadline}
           />
         </Dialog>
