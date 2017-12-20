@@ -6,7 +6,7 @@ import IconButton from 'material-ui/IconButton';
 import IconSettings from 'material-ui/svg-icons/action/settings';
 import TimePicker from 'material-ui/TimePicker';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import './Config.css';
+import '../../stylesheets/Config.css';
 
 injectTapEventPlugin();
 
@@ -15,7 +15,7 @@ const customContentStyle = {
   maxWidth: '400px'
 };
 
-export default class DialogExampleSimple extends React.Component {
+export default class Config extends React.Component {
   state = {
     open: false,
   };
@@ -32,7 +32,7 @@ export default class DialogExampleSimple extends React.Component {
     const actions = [
       <FlatButton
         label="Close"
-        primary={true} 
+        primary={true}
         onTouchTap={this.handleClose}
       />,
     ];
@@ -57,14 +57,14 @@ export default class DialogExampleSimple extends React.Component {
             pedantic={true}
             autoOk={true}
             value={this.props.start}
-            onChange={this.props.startHandler}
+            onChange={this.props.onSetStart}
           />
           <TimePicker
             hintText='Exam Ends...'
             pedantic={true}
             autoOk={true}
             value={this.props.deadline}
-            onChange={this.props.deadlineHandler}
+            onChange={this.props.onSetDeadline}
           />
         </Dialog>
       </div>

@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import padZero from "./utils/padZero";
+import padZero from "../../utils/padZero";
 import DigitalClock from "./DigitalClock";
-import "./TimeRemaining.css";
+import "../../stylesheets/TimeRemaining.css";
 
 export default class TimeRemaining extends Component {
   constructor(props) {
     super(props);
-    this.state = this.getTime();
-
-    setInterval(() => {
-      this.updateTime();
-    }, 1000);
+    this.state = {
+      time: new Date(props.time)
+    }
   }
 
-  getTime() {
-    var distance = this.props.deadline - this.props.time;
+  componentWillReceiveProps(newProps) {
+    this.setState(this.getTime(newProps.time, newProps.deadline))
+  }
 
-    var _second = 1000;
-    var _minute = _second * 60;
-    var _hour = _minute * 60;
-    var _day = _hour * 24;
+  getTime(time, deadline) {
+    const distance = deadline - time;
+
+    const _second = 1000;
+    const _minute = _second * 60;
+    const _hour = _minute * 60;
+    const _day = _hour * 24;
 
     if (distance < 0) {
       return null;
