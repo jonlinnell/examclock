@@ -36,7 +36,6 @@ const initialState = {
 const store = storeFactory(initialState)
 
 window.React = React
-window.store = store //debug
 
 window.addEventListener('error', (message, source, lineno, colno, error) => {
   store.dispatch(
