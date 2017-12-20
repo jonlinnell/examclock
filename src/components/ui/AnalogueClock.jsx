@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import padZero from "../../utils/padZero";
 import '../../stylesheets/AnalogueClock.css';
 
 export default class AnalogueClock extends Component {
@@ -8,13 +7,21 @@ export default class AnalogueClock extends Component {
     // Fix loading initial values here
   }
 
-  componentWillReceiveProps(newProps) {
-    let time = new Date(newProps.time)
+  syncTime = (newTime) => {
+    let time = new Date(newTime)
     this.updateClock(
       time.getHours(),
       time.getMinutes(),
       time.getSeconds()
     )
+  }
+
+  componentDidMount() {
+    this.syncTime(this.props.time);
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.syncTime(newProps.time)
   }
 
   updateClock(hours, minutes, seconds) {
@@ -24,10 +31,6 @@ export default class AnalogueClock extends Component {
     document.getElementById('js-seconds').style.transform = `translate(-50%, -100%) rotate(${angleSeconds}deg)`;
     document.getElementById('js-minutes').style.transform = `translate(-50%, -100%) rotate(${angleMinutes}deg)`;
     document.getElementById('js-hours').style.transform = `translate(-50%, -100%) rotate(${angleHours}deg)`;
-  }
-
-  componentDidMount() {
-    this.updateClock();
   }
 
   render() {

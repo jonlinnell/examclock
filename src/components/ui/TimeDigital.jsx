@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DigitalClock from '../ui/DigitalClock';
-import padZero from "../../utils/padZero";
+import padZero from "../../lib/padZero";
 import '../../stylesheets/TimeDigital.css';
 
 export default class TimeDigital extends Component {

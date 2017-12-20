@@ -1,8 +1,9 @@
-import C from '../constants'
 import appReducer from './reducers'
 import { applyMiddleware, createStore } from 'redux'
 
+// eslint-disable-next-line no-unused-vars
 const consoleMessages = store => next => action => {
+  // Include this in applyMiddleware for debugging
   let result
 
   console.groupCollapsed(`Dispatching action: ${action.type}`)
@@ -22,5 +23,5 @@ const consoleMessages = store => next => action => {
 }
 
 export default (initialState={}) => {
-  return applyMiddleware(consoleMessages)(createStore)(appReducer, initialState)
+  return applyMiddleware()(createStore)(appReducer, initialState)
 }

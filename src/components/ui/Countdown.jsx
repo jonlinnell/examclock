@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import padZero from "./utils/padZero";
+import padZero from "./lib/padZero";
 import DigitalClock from "./DigitalClock";
 import "./Countdown.css";
 

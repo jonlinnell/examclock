@@ -1,10 +1,8 @@
-import TimeElapsed from '../ui/TimeElapsed'
 import { connect } from 'react-redux'
+import TimeElapsed from '../ui/TimeElapsed'
+import { syncTimeElapsed } from '../../lib/calcTime'
 
 const mapStateToProps = state =>
-  ({
-    start: state.start,
-    time: state.currentTime
-  })
+  (syncTimeElapsed(state.currentTime, state.start))
 
 export default connect(mapStateToProps)(TimeElapsed)

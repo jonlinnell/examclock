@@ -6,22 +6,31 @@ export const updateCurrentTime = time =>
     payload: time
   })
 
-export const setDeadline = deadline =>
-  ({
+export const setDeadline = (deadline) => {
+  let rationalisedTime = new Date(deadline)
+  rationalisedTime.setSeconds(0, 0)
+  rationalisedTime.setSeconds(rationalisedTime.getSeconds() + 1)
+
+  return ({
     type: C.SET_DEADLINE,
-    payload: deadline
+    payload: rationalisedTime
   })
+}
 
 export const clearDeadline = () =>
   ({
     type: C.CLEAR_DEADLINE
   })
 
-export const setStart = start =>
-  ({
+export const setStart = (start) => {
+  let rationalisedTime = new Date(start)
+  rationalisedTime.setSeconds(0, 0)
+
+  return ({
     type: C.SET_START,
-    payload: start
+    payload: rationalisedTime
   })
+}
 
 export const clearStart = () =>
   ({
