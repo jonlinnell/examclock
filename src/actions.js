@@ -8,7 +8,7 @@ export const updateCurrentTime = time =>
   })
 
 export const setDeadline = (deadline) => {
-  let rationalisedTime = rationaliseTime(deadline)
+  const rationalisedTime = rationaliseTime(deadline)
   rationalisedTime.setSeconds(0, 0)
   rationalisedTime.setSeconds(rationalisedTime.getSeconds() + 1)
 
@@ -24,7 +24,7 @@ export const clearDeadline = () =>
   })
 
 export const setStart = (start) => {
-  let rationalisedTime = rationaliseTime(start)
+  const rationalisedTime = rationaliseTime(start)
   rationalisedTime.setSeconds(0, 0)
 
   return ({
@@ -39,10 +39,10 @@ export const clearStart = () =>
   })
 
 export const addError = message =>
- ({
-   type: C.ADD_ERROR,
-   payload: message
- })
+  ({
+    type: C.ADD_ERROR,
+    payload: message
+  })
 
 export const clearError = index =>
   ({
@@ -51,6 +51,4 @@ export const clearError = index =>
   })
 
 export const toggleTimers = toggled =>
-  toggled
-  ? ({ type: C.SHOW_TIMERS })
-  : ({ type: C.HIDE_TIMERS })
+  (toggled ? ({ type: C.SHOW_TIMERS }) : ({ type: C.HIDE_TIMERS }))

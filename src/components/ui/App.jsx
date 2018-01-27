@@ -5,22 +5,21 @@ import TimeRemaining from '../containers/TimeRemaining'
 import Config from '../containers/Config'
 import TimeElapsed from '../containers/TimeElapsed'
 import logo from '../../logo.png'
-import 'bootstrap/dist/css/bootstrap.css'
+
 import '../../stylesheets/App.css'
 
 export default class App extends Component {
   render() {
-
     const timers = this.props.timers
-    ?  <div className="row">
-         <div className="col-md-3 col-md-offset-3 col-xs-6">
-           <TimeElapsed />
-         </div>
-         <div className="col-md-3 col-xs-6">
-           <TimeRemaining />
-         </div>
-       </div>
-    : null
+      ? <div className="row">
+          <div className="col-md-3 offset-md-3 col-sm-12">
+            <TimeElapsed />
+          </div>
+          <div className="col-md-3 col-xs-6">
+            <TimeRemaining />
+          </div>
+        </div>
+      : null
 
     return (
       <div className="App">
@@ -36,12 +35,10 @@ export default class App extends Component {
             </div>
           </div>
           { timers }
-          <div className="row">
-            <div className="col-xs-12">
-              <Config />
-              <img className='pull-left' src={logo} alt='logo' />
-            </div>
-          </div>
+          <nav className="navbar fixed-bottom">
+            <img src={logo} alt='logo' />
+            <Config />
+          </nav>
         </div>
       </div>
     )

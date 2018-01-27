@@ -1,6 +1,2 @@
-export default function(i) {
-  if (i < 10) {
-    i = `0${i}`
-  }
-  return i
-}
+export default digits =>
+  (digits < 10 ? `0${digits}` : digits)

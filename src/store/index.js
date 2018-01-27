@@ -1,30 +1,7 @@
-import appReducer from './reducers'
 import { applyMiddleware, createStore } from 'redux'
+import appReducer from './reducers'
 
-// eslint-disable-next-line no-unused-vars
-const consoleMessages = store => next => action => {
-  // Include this in applyMiddleware for debugging
-  let result
+import defaultInitialState from '../initialState'
 
-  console.groupCollapsed(`Dispatching action: ${action.type}`)
-
-  result = next(action)
-
-  console.log(`
-
-Action:
-${JSON.stringify(action, null, 2)}
-
-State:
-${JSON.stringify(store.getState(), null, 2)}
-
-  `)
-
-  console.groupEnd()
-
-  return result
-}
-
-export default (initialState={}) => {
-  return applyMiddleware()(createStore)(appReducer, initialState)
-}
+export default (initialState = defaultInitialState) =>
+  applyMiddleware()(createStore)(appReducer, initialState)

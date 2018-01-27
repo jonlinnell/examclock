@@ -2,13 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+
+import 'bootstrap/dist/css/bootstrap.css'
+
 import App from './components/containers/App'
 
 import storeFactory from './store'
 import { addError, updateCurrentTime } from './actions'
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import './stylesheets/index.css'
 
@@ -23,7 +25,7 @@ const muiTheme = getMuiTheme({
 
 const fakeNow = new Date(Date.now())
 fakeNow.setFullYear(fakeNow.getFullYear() + 1)
-fakeNow.setHours(0,0,0,0)
+fakeNow.setHours(0, 0, 0, 0)
 
 const initialState = {
   currentTime: Date.now(),
@@ -36,16 +38,12 @@ const store = storeFactory(initialState)
 
 window.React = React
 
-window.addEventListener('error', (message, source, lineno, colno, error) => {
-  store.dispatch(
-    addError(message)
-  )
+window.addEventListener('error', (message) => {
+  store.dispatch(addError(message))
 })
 
 setInterval(() => {
-  store.dispatch(
-    updateCurrentTime(Date.now())
-  )
+  store.dispatch(updateCurrentTime(Date.now()))
 }, 1000)
 
 ReactDOM.render(
@@ -54,4 +52,5 @@ ReactDOM.render(
       <App />
     </MuiThemeProvider>
   </Provider>,
-  document.getElementById('root'))
+  document.getElementById('root')
+)

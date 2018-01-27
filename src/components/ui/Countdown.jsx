@@ -1,47 +1,47 @@
-import React, { Component } from 'react';
-import padZero from "./lib/padZero";
-import DigitalClock from "./DigitalClock";
-import "./Countdown.css";
+import React, { Component } from 'react'
+import padZero from './lib/padZero'
+import DigitalClock from './DigitalClock'
+import './Countdown.css'
 
 export default class Countdown extends Component {
   constructor(props) {
-    super(props);
-    this.state = this.getTime();
+    super(props)
+    this.state = this.getTime()
 
     setInterval(() => {
-      this.updateTime();
-    }, 1000);
+      this.updateTime()
+    }, 1000)
   }
 
   getTime() {
-    var now = new Date();
+    const now = new Date()
 
-    var distance = this.props.deadline - now;
+    const distance = this.props.deadline - now
 
-    var _second = 1000;
-    var _minute = _second * 60;
-    var _hour = _minute * 60;
-    var _day = _hour * 24;
+    const second = 1000
+    const minute = second * 60
+    const hour = minute * 60
+    const day = hour * 24
 
     if (distance < 0) {
-      return null;
+      return null
     }
 
     return ({
-      hours: padZero(Math.floor((distance % _day) / _hour)),
-      minutes: padZero(Math.floor((distance % _hour) / _minute)),
-      seconds: padZero(Math.floor((distance % _minute) / _second))
-    });
+      hours: padZero(Math.floor((distance % day) / hour)),
+      minutes: padZero(Math.floor((distance % hour) / minute)),
+      seconds: padZero(Math.floor((distance % minute) / second))
+    })
   }
 
   updateTime() {
-    this.setState(this.getTime());
+    this.setState(this.getTime())
   }
 
   render() {
     return (
       <div>
-        <h5 className="cd">TIME REMAINING</h5>
+        <h5 className='cd'>TIME REMAINING</h5>
         <DigitalClock
           hours={this.state.hours}
           minutes={this.state.minutes}

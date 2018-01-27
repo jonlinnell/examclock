@@ -1,18 +1,18 @@
-import C from '../constants'
 import { combineReducers } from 'redux'
 
-export const currentTime = (state=Date.now(), action) =>
-  (action.type === C.UPDATE_CURRENT_TIME) ?
-    action.payload :
-    state
+import C from '../constants'
 
-export const deadline = (state=null, action) => {
+export const currentTime = (state = Date.now(), action) =>
+  ((action.type === C.UPDATE_CURRENT_TIME)
+    ? action.payload
+    : state)
+
+export const deadline = (state = null, action) => {
   switch (action.type) {
-
-    case C.SET_DEADLINE :
+    case C.SET_DEADLINE:
       return action.payload
 
-    case C.CLEAR_DEADLINE :
+    case C.CLEAR_DEADLINE:
       return null
 
     default:
@@ -20,13 +20,12 @@ export const deadline = (state=null, action) => {
   }
 }
 
-export const start = (state=null, action) => {
+export const start = (state = null, action) => {
   switch (action.type) {
-
-    case C.SET_START :
+    case C.SET_START:
       return action.payload
 
-    case C.CLEAR_START :
+    case C.CLEAR_START:
       return null
 
     default:
@@ -34,16 +33,15 @@ export const start = (state=null, action) => {
   }
 }
 
-export const errors = (state=null, action) => {
+export const errors = (state = null, action) => {
   switch (action.type) {
-
-    case C.ADD_ERROR :
+    case C.ADD_ERROR:
       return [
         ...state,
         action.payload
       ]
 
-    case C.CLEAR_ERROR :
+    case C.CLEAR_ERROR:
       return state.filter((message, i) => i !== action.payload)
 
     default:
@@ -51,12 +49,12 @@ export const errors = (state=null, action) => {
   }
 }
 
-export const timers = (state=true, action) => {
+export const timers = (state = true, action) => {
   switch (action.type) {
-    case C.SHOW_TIMERS :
+    case C.SHOW_TIMERS:
       return true
 
-    case C.HIDE_TIMERS :
+    case C.HIDE_TIMERS:
       return false
 
     default:

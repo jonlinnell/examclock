@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import DigitalClock from '../ui/DigitalClock';
-import padZero from "../../lib/padZero";
-import '../../stylesheets/TimeDigital.css';
+import React, { Component } from 'react'
+import DigitalClock from '../ui/DigitalClock'
+import padZero from '../../lib/padZero'
+import '../../stylesheets/TimeDigital.css'
 
 export default class TimeDigital extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export default class TimeDigital extends Component {
   }
 
   render() {
-    return(
+    return (
       <DigitalClock
         hours={padZero(this.state.time.getHours())}
         minutes={padZero(this.state.time.getMinutes())}
