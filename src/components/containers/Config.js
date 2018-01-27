@@ -3,6 +3,7 @@ import {
   setDeadline,
   clearDeadline,
   setStart,
+  toggleTimers,
   clearStart
 } from '../../actions'
 import { connect } from 'react-redux'
@@ -10,7 +11,8 @@ import { connect } from 'react-redux'
 const mapStateToProps = (state) => {
   return {
     deadline: state.deadline,
-    start: state.start
+    start: state.start,
+    timers: state.timers
   }
 }
 
@@ -34,6 +36,11 @@ const mapDispatchToProps = (dispatch) => {
     onClearStart() {
       dispatch(
         clearStart()
+      )
+    },
+    onToggleTimers(event, toggled) {
+      dispatch(
+        toggleTimers(toggled)
       )
     }
   })

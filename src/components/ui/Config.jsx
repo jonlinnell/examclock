@@ -1,10 +1,10 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
 import IconSettings from 'material-ui/svg-icons/action/settings';
 import TimePicker from 'material-ui/TimePicker';
+import Toggle from 'material-ui/Toggle'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import '../../stylesheets/Config.css';
 
@@ -53,18 +53,23 @@ export default class Config extends React.Component {
           onRequestClose={this.handleClose}
         >
           <TimePicker
-            hintText='Exam Starts...'
+            hintText='Exam start time'
             pedantic={true}
             autoOk={true}
             value={new Date(this.props.start)}
             onChange={this.props.onSetStart}
           />
           <TimePicker
-            hintText='Exam Ends...'
+            hintText='Exam end time'
             pedantic={true}
             autoOk={true}
             value={new Date(this.props.deadline)}
             onChange={this.props.onSetDeadline}
+          />
+          <Toggle
+            label='Show Timers'
+            defaultToggled={this.props.timers}
+            onToggle={this.props.onToggleTimers}
           />
         </Dialog>
       </div>

@@ -49,3 +49,8 @@ export const clearError = index =>
     type: C.CLEAR_ERROR,
     payload: index
   })
+
+export const toggleTimers = toggled =>
+  toggled
+  ? ({ type: C.SHOW_TIMERS })
+  : ({ type: C.HIDE_TIMERS })

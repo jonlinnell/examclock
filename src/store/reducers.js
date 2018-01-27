@@ -51,9 +51,23 @@ export const errors = (state=null, action) => {
   }
 }
 
+export const timers = (state=true, action) => {
+  switch (action.type) {
+    case C.SHOW_TIMERS :
+      return true
+
+    case C.HIDE_TIMERS :
+      return false
+
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   currentTime,
   deadline,
   start,
+  timers,
   errors
 })

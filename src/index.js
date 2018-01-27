@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
-import App from './App'
+import App from './components/containers/App'
 
 import storeFactory from './store'
 import { addError, updateCurrentTime } from './actions'
@@ -21,7 +21,6 @@ const muiTheme = getMuiTheme({
   }
 })
 
-// Todo: add stateful start/stop of clocks ... maybe
 const fakeNow = new Date(Date.now())
 fakeNow.setFullYear(fakeNow.getFullYear() + 1)
 fakeNow.setHours(0,0,0,0)
