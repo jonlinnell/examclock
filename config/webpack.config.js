@@ -25,8 +25,8 @@ module.exports = {
       {
         test: /\.css$/,
         use: extractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
+          fallback: 'style-loader',
+          use: 'css-loader'
         })
       },
       {
@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: 'url-loader?limit=10000,outputPath=fonts/',
+        use: 'url-loader?limit=10000,outputPath=fonts/'
       },
       {
         test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
@@ -52,7 +52,7 @@ module.exports = {
       {
         test: /\.(png|jpg)$/,
         use: 'file-loader?outputPath=images/'
-      },
+      }
     ]
   },
   resolve: {
