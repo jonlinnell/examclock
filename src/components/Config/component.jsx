@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import IconButton from 'material-ui/IconButton'
@@ -7,7 +7,7 @@ import TimePicker from 'material-ui/TimePicker'
 import Toggle from 'material-ui/Toggle'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
-import './styles.css'
+import './styles.scss'
 
 injectTapEventPlugin()
 
@@ -16,7 +16,7 @@ const customContentStyle = {
   maxWidth: '400px'
 }
 
-export default class Config extends React.Component {
+export default class Config extends Component {
   state = {
     open: false
   }
@@ -39,9 +39,8 @@ export default class Config extends React.Component {
     ]
 
     return (
-      <div>
+      <div className='button-config'>
         <IconButton
-          className='pull-right'
           onTouchTap={this.handleOpen}>
           <IconSettings />
         </IconButton>

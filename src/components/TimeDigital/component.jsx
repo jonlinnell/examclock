@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import DigitalClock from '../DigitalClock'
 import padZero from '../../lib/padZero'
 
-import './styles.css'
-
 export default class TimeDigital extends Component {
   constructor(props) {
     super()

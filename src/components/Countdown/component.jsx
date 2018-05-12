@@ -3,8 +3,6 @@ import padZero from './lib/padZero'
 
 import DigitalClock from '../DigitalClock'
 
-import './styles.css'
-
 export default class Countdown extends Component {
   constructor(props) {
     super(props)

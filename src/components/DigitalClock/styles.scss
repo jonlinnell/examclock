@@ -1,3 +1,5 @@
+@import '../../styles/colours.scss';
+
 ul {
   list-style: none;
   padding: 0;
@@ -6,7 +8,6 @@ ul {
 
 li {
   display: inline;
-  font-family: "DIN Round Web";
 }
 
 li.lg {
@@ -19,10 +20,6 @@ li.sm {
   margin: 0 0.4rem;
 }
 
-.hours, .minutes {
-  color: #525E66;
-}
-
-.seconds {
-  color: #B70062;
-}
+.hours { color: $hours; }
+.minutes { color: $minutes; }
+.seconds { color: $seconds; }

@@ -12,7 +12,7 @@ import MainView from './components/MainView'
 import storeFactory from './store'
 import { addError, updateCurrentTime } from './actions'
 
-import './styles/main.css'
+import './styles/main.scss'
 
 const muiTheme = getMuiTheme({
   palette: {

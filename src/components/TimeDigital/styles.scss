@@ -1,4 +1,4 @@
-/**/
+@import '../../styles/colours.scss';
 
 ul {
   float: center;
@@ -11,13 +11,8 @@ li {
   display: inline;
   margin: 0 1rem;
   font-size: 10rem;
-  font-family: "DIN Round Web";
 }
 
-.hours, .minutes {
-  color: #525E66;
-}
-
-.seconds {
-  color: #B70062;
-}
+.hours { color: $hours; }
+.minutes { color: $minutes; }
+.seconds { color: $seconds; }

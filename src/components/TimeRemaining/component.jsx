@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 
 import DigitalClock from '../DigitalClock'
 
-import './styles.css'
-
 export default class TimeRemaining extends Component {
   constructor(props) {
-    super(props)
+    super()
     this.state = {
       hours: props.hours,
       minutes: props.minutes,
@@ -29,7 +27,7 @@ export default class TimeRemaining extends Component {
   render() {
     return (
       <div>
-        <h5 className='cd'>TIME REMAINING</h5>
+        <h5>TIME REMAINING</h5>
         <DigitalClock
           hours={this.state.hours}
           minutes={this.state.minutes}

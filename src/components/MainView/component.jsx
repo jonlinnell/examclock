@@ -6,9 +6,7 @@ import TimeRemaining from '../TimeRemaining'
 import Config from '../Config'
 import TimeElapsed from '../TimeElapsed'
 
-import logo from '../../logo.png'
-
-import './styles.css'
+import './styles.scss'
 
 export default class MainView extends Component {
   render() {
@@ -37,8 +35,7 @@ export default class MainView extends Component {
             </div>
           </div>
           { timers }
-          <nav className="navbar fixed-bottom">
-            <img src={logo} alt='logo' />
+          <nav className="navbar w-100 fixed-bottom">
             <Config />
           </nav>
         </div>

@@ -1,3 +1,5 @@
+@import '../../styles/colours.scss';
+
 *:before,
 :after {
   -webkit-box-sizing: border-box;
@@ -29,7 +31,7 @@
   top: 50%;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  border: 5px solid #525E66;
+  border: 5px solid $grey;
   z-index: 3;
 }
 .c-clock .c-clock__tick {
@@ -43,7 +45,7 @@
 .c-clock .c-clock__tick.c-clock__tick--hours {
   width: 10px;
   height: 150px;
-  background: #525E66;
+  background: $hours;
   z-index: 2;
   transform: translate(-50%, -100%);
   border-radius: 20px 20px 0 0;
@@ -51,7 +53,7 @@
 .c-clock .c-clock__tick.c-clock__tick--minutes {
   width: 10px;
   height: 200px;
-  background: #525E66;
+  background: $minutes;
   z-index: 2;
   transform: translate(-50%, -100%);
   border-radius: 20px 20px 0 0;
@@ -61,7 +63,7 @@
 .c-clock .c-clock__tick.c-clock__tick--seconds {
   width: 6px;
   height: 200px;
-  background: #B70062;
+  background: $seconds;
   z-index: 3;
   transform: translate(-50%, -100%);
   border-radius: 10px;

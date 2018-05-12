@@ -34,6 +34,18 @@ module.exports = {
         })
       },
       {
+        test: /\.scss$/,
+        use: [{
+          loader: 'style-loader'
+        },
+        {
+          loader: 'css-loader'
+        },
+        {
+          loader: 'sass-loader'
+        }]
+      },
+      {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: 'url-loader?limit=10000,outputPath=fonts/',
       },
