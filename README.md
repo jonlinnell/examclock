@@ -1,6 +1,8 @@
 # examclock
 A simple display clock for timing exams (or any other event that requires a clock on display and preset timing.)
 
+View the [live demo](https://jonlinnell.github.io/demos/examclock/).
+
 ## Usage
 Install dependencies
 ```shell
