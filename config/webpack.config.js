@@ -1,6 +1,5 @@
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const extractTextPlugin = require('extract-text-webpack-plugin')
-const dotenvWebpack = require('dotenv-webpack')
 
 const paths = require('./paths')
 
