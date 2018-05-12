@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import TimeDigital from '../ui/TimeDigital'
+import TimeDigital from './component'
 
 const mapStateToProps = state =>
   ({

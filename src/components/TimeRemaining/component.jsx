@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import DigitalClock from './DigitalClock'
-import '../../stylesheets/TimeElapsed.css'
 
-export default class TimeElapsed extends Component {
+import DigitalClock from '../DigitalClock'
+
+import './styles.css'
+
+export default class TimeRemaining extends Component {
   constructor(props) {
-    super()
+    super(props)
     this.state = {
       hours: props.hours,
       minutes: props.minutes,
@@ -27,11 +29,11 @@ export default class TimeElapsed extends Component {
   render() {
     return (
       <div>
-        <h5 className='cd'>TIME ELAPSED</h5>
+        <h5 className='cd'>TIME REMAINING</h5>
         <DigitalClock
-          hours={this.props.hours}
-          minutes={this.props.minutes}
-          seconds={this.props.seconds}
+          hours={this.state.hours}
+          minutes={this.state.minutes}
+          seconds={this.state.seconds}
           size='sm'
         />
       </div>

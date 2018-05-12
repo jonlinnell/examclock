@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import '../../stylesheets/DigitalClock.css'
+
+import './styles.css'
 
 export default class DigitalClock extends Component {
   render() {

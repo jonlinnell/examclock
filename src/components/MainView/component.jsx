@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import AnalogueClock from '../containers/AnalogueClock'
-import TimeDigital from '../containers/TimeDigital'
-import TimeRemaining from '../containers/TimeRemaining'
-import Config from '../containers/Config'
-import TimeElapsed from '../containers/TimeElapsed'
+
+import AnalogueClock from '../AnalogueClock'
+import TimeDigital from '../TimeDigital'
+import TimeRemaining from '../TimeRemaining'
+import Config from '../Config'
+import TimeElapsed from '../TimeElapsed'
+
 import logo from '../../logo.png'
 
-import '../../stylesheets/App.css'
+import './styles.css'
 
-export default class App extends Component {
+export default class MainView extends Component {
   render() {
     const timers = this.props.timers
       ? <div className="row">

@@ -7,12 +7,12 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import 'bootstrap/dist/css/bootstrap.css'
 
-import App from './components/containers/App'
+import MainView from './components/MainView'
 
 import storeFactory from './store'
 import { addError, updateCurrentTime } from './actions'
 
-import './stylesheets/index.css'
+import './styles/main.css'
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -49,7 +49,7 @@ setInterval(() => {
 ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider muiTheme={muiTheme}>
-      <App />
+      <MainView />
     </MuiThemeProvider>
   </Provider>,
   document.getElementById('root')

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import AnalogueClock from '../ui/AnalogueClock'
+import AnalogueClock from './component'
 
 const mapStateToProps = state =>
   ({ time: state.currentTime })

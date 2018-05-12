@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import Config from '../ui/Config'
+import Config from './component'
 
 import {
   setDeadline,

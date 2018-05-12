@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 
-import App from '../ui/App'
+import MainView from './component'
 
 const mapStateToProps = state =>
   ({ timers: state.timers })
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(MainView)

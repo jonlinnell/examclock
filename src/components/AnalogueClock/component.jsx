@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import '../../stylesheets/AnalogueClock.css'
+
+import './styles.css'
 
 export default class AnalogueClock extends Component {
   constructor(props) {

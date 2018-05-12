@@ -6,7 +6,8 @@ import IconSettings from 'material-ui/svg-icons/action/settings'
 import TimePicker from 'material-ui/TimePicker'
 import Toggle from 'material-ui/Toggle'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-import '../../stylesheets/Config.css'
+
+import './styles.css'
 
 injectTapEventPlugin()
 

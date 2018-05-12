@@ -1,5 +1,7 @@
 import { connect } from 'react-redux'
-import TimeRemaining from '../ui/TimeRemaining'
+
+import TimeRemaining from './component'
+
 import { syncTimeRemaining } from '../../lib/calcTime'
 
 const mapStateToProps = state =>
