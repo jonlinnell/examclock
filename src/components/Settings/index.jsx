@@ -17,36 +17,37 @@ const customContentStyle = {
 }
 
 export default class Config extends Component {
-  state = {
-    open: false
-  }
+  state = { open: false }
 
-  handleOpen = () => {
-    this.setState({ open: true })
-  }
+  handleOpen = () => this.setState({ open: true })
 
-  handleClose = () => {
-    this.setState({ open: false })
-  }
+  handleClose = () => this.setState({ open: false })
 
-  render = () => {
-    const actions = [
-      <FlatButton
-        label='Close'
-        primary={true}
-        onTouchTap={this.handleClose}
-      />
-    ]
+  render() {
+    const {
+      startTime,
+      endTime,
+      onSetStartTime,
+      onSetEndTime,
+      displayTimers,
+      onToggleTimers
+    } = this.props
 
     return (
       <div className='button-config'>
         <IconButton
-          onTouchTap={this.handleOpen}>
+          onClick={this.handleOpen}>
           <IconSettings />
         </IconButton>
         <Dialog
           title='Settings'
-          actions={actions}
+          actions={
+            <FlatButton
+              label='Close'
+              primary={true}
+              onClick={this.handleClose}
+            />
+          }
           modal={false}
           open={this.state.open}
           contentStyle={customContentStyle}
@@ -56,22 +57,22 @@ export default class Config extends Component {
             hintText='Exam start time'
             pedantic={true}
             autoOk={true}
-            value={new Date(this.props.start)}
-            onChange={this.props.onSetStart}
+            value={startTime}
+            onChange={onSetStartTime}
             className='my-2'
           />
           <TimePicker
             hintText='Exam end time'
             pedantic={true}
             autoOk={true}
-            value={new Date(this.props.deadline)}
-            onChange={this.props.onSetDeadline}
+            value={endTime}
+            onChange={onSetEndTime}
             className='my-2'
           />
           <Toggle
             label='Show Timers'
-            defaultToggled={this.props.timers}
-            onToggle={this.props.onToggleTimers}
+            defaultToggled={displayTimers}
+            onToggle={onToggleTimers}
             className='my-2'
           />
         </Dialog>
