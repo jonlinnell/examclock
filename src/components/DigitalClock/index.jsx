@@ -10,7 +10,7 @@ const DigitalClock = ({
   seconds,
   size
 }) => (
-  <ul>
+  <ul className='digital-clock'>
     <li className={`hours ${size}`}>
       { padStart(hours) || '00' }
     </li>

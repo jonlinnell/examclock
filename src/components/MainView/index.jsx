@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react'
 
+import 'antd/dist/antd.css'
+
 import AnalogueClock from '../AnalogueClock'
 import DigitalClock from '../DigitalClock'
 import TimeRemaining from '../TimeRemaining'
@@ -21,6 +23,7 @@ class MainView extends PureComponent {
     this.setEndTime = this.setEndTime.bind(this)
     this.setStartTime = this.setStartTime.bind(this)
     this.toggleTimers = this.toggleTimers.bind(this)
+    this.toggleSettings = this.toggleSettings.bind(this)
   }
 
   componentDidMount() {
@@ -30,11 +33,13 @@ class MainView extends PureComponent {
   setEndTime = endTime => this.setState({ endTime: rationaliseTime(endTime) })
   setStartTime = startTime => this.setState({ startTime: rationaliseTime(startTime) })
   toggleTimers = () => this.setState({ displayTimers: !this.state.displayTimers })
+  toggleSettings = () => this.setState({ displaySettings: !this.state.displaySettings })
 
   render() {
     const {
       currentTime,
       displayTimers,
+      displaySettings,
       endTime,
       startTime
     } = this.state
@@ -77,7 +82,7 @@ class MainView extends PureComponent {
               <div className="col-md-3 col-xs-6">
               <h5>Time Remaining</h5>
               {
-                Number.isNaN(endTime)
+                endTime
                 ? (
                   <TimeRemaining
                     currentTime={currentTime}
@@ -92,12 +97,12 @@ class MainView extends PureComponent {
           : null
         }
         <Settings
-          startTime={startTime}
-          endTime={endTime}
-          onSetStartTime={this.setStartTime}
-          onSetEndTime={this.setEndTime}
+          displaySettings={displaySettings}
           displayTimers={displayTimers}
+          onSetEndTime={this.setEndTime}
+          onSetStartTime={this.setStartTime}
           onToggleTimers={this.toggleTimers}
+          onToggleSettings={this.toggleSettings}
         />
         </div>
       </div>

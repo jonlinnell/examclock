@@ -1,20 +1,13 @@
 import React, { Component } from 'react'
-import Dialog from 'material-ui/Dialog'
-import FlatButton from 'material-ui/FlatButton'
-import IconButton from 'material-ui/IconButton'
-import IconSettings from 'material-ui/svg-icons/action/settings'
-import TimePicker from 'material-ui/TimePicker'
-import Toggle from 'material-ui/Toggle'
-import injectTapEventPlugin from 'react-tap-event-plugin'
+import {
+  Form,
+  Modal,
+  Button,
+  TimePicker,
+  Switch
+} from 'antd'
 
 import './styles.scss'
-
-injectTapEventPlugin()
-
-const customContentStyle = {
-  width: '75%',
-  maxWidth: '400px'
-}
 
 export default class Config extends Component {
   state = { open: false }
@@ -25,57 +18,49 @@ export default class Config extends Component {
 
   render() {
     const {
-      startTime,
-      endTime,
-      onSetStartTime,
       onSetEndTime,
+      onSetStartTime,
       displayTimers,
-      onToggleTimers
+      displaySettings,
+      onToggleTimers,
+      onToggleSettings
     } = this.props
 
     return (
-      <div className='button-config'>
-        <IconButton
-          onClick={this.handleOpen}>
-          <IconSettings />
-        </IconButton>
-        <Dialog
+      <div>
+        <Button
+          onClick={onToggleSettings}
+        >
+          Settings
+        </Button>
+        <Modal
           title='Settings'
-          actions={
-            <FlatButton
-              label='Close'
-              primary={true}
-              onClick={this.handleClose}
-            />
-          }
-          modal={false}
-          open={this.state.open}
-          contentStyle={customContentStyle}
-          onRequestClose={this.handleClose}
+          visible={displaySettings}
+          onOk={onToggleSettings}
+          onCancel={onToggleSettings}
         >
           <TimePicker
-            hintText='Exam start time'
-            pedantic={true}
-            autoOk={true}
-            value={startTime}
+            placeholder='Exam start time'
             onChange={onSetStartTime}
-            className='my-2'
+            format="HH:mm"
           />
+          <br />
           <TimePicker
-            hintText='Exam end time'
-            pedantic={true}
-            autoOk={true}
-            value={endTime}
+            placeholder='Exam end time'
             onChange={onSetEndTime}
-            className='my-2'
+            format="HH:mm"
           />
-          <Toggle
-            label='Show Timers'
-            defaultToggled={displayTimers}
-            onToggle={onToggleTimers}
-            className='my-2'
-          />
-        </Dialog>
+          <br />
+          <Form.Item>
+            <label htmlFor="toggle-timers">Toggle</label>
+            <Switch
+              label='Show Timers'
+              id="toggle-timers"
+              checked={displayTimers}
+              onChange={onToggleTimers}
+            />
+          </Form.Item>
+        </Modal>
       </div>
     )
   }

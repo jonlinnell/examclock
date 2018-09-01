@@ -1,6 +1,6 @@
 import React from 'react'
 
-import DigitalClock from '../DigitalClock'
+import DigitalClock from './DigitalClock'
 
 const TimeRemaining = ({ currentTime, endTime, ...rest }) => {
   const distance = endTime - currentTime
