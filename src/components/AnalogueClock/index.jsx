@@ -37,9 +37,9 @@ export default class AnalogueClock extends Component {
   render() {
     return (
       <div className="c-clock">
-        <div id ="js-hours" className="c-clock__tick c-clock__tick--hours" style={this.state.hoursStyleTransform}></div>
-        <div id ="js-minutes" className="c-clock__tick c-clock__tick--minutes" style={this.state.minutesStyleTransform}></div>
-        <div id ="js-seconds" className="c-clock__tick c-clock__tick--seconds" style={this.state.secondsStyleTransform}></div>
+        <div id="js-hours" className="c-clock__tick c-clock__tick--hours" style={this.state.hoursStyleTransform}></div>
+        <div id="js-minutes" className="c-clock__tick c-clock__tick--minutes" style={this.state.minutesStyleTransform}></div>
+        <div id="js-seconds" className="c-clock__tick c-clock__tick--seconds" style={this.state.secondsStyleTransform}></div>
       </div>
     )
   }

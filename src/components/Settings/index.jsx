@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import {
   Form,
   Modal,
   Button,
+  Icon,
   TimePicker,
   Switch
 } from 'antd'
 
-import './styles.scss'
+const SettingsButton = styled(Button)`
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+`
 
 export default class Config extends Component {
   state = { open: false }
@@ -28,11 +34,11 @@ export default class Config extends Component {
 
     return (
       <div>
-        <Button
+        <SettingsButton
           onClick={onToggleSettings}
         >
-          Settings
-        </Button>
+          <Icon type="setting" />
+        </SettingsButton>
         <Modal
           title='Settings'
           visible={displaySettings}

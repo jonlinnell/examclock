@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { Layout, Row, Col } from 'antd'
 
 import 'antd/dist/antd.css'
 
@@ -9,7 +10,7 @@ import Settings from '../Settings'
 
 import { rationaliseTime } from '../../lib/calcTime'
 
-import './styles.scss'
+const { Content, Footer } = Layout
 
 class MainView extends PureComponent {
   constructor() {
@@ -45,67 +46,73 @@ class MainView extends PureComponent {
     } = this.state
 
     return (
-      <div className="App">
-        <div className="container">
-        <div className="row">
-          <div className="col-lg-12 clock-center">
-            <AnalogueClock time={currentTime} />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-12 clock-center">
-            <DigitalClock
-              hours={currentTime.getHours()}
-              minutes={currentTime.getMinutes()}
-              seconds={currentTime.getSeconds()}
-              size='lg'
+      <Layout>
+        <Content>
+          <Row>
+            <Col span={12} offset={6}>
+              <AnalogueClock time={currentTime} />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col span={12} offset={6}>
+              <DigitalClock
+                hours={currentTime.getHours()}
+                minutes={currentTime.getMinutes()}
+                seconds={currentTime.getSeconds()}
+                size='lg'
+              />
+            </Col>
+          </Row>
+          {
+            displayTimers
+              ? <Row
+                  align="middle"
+                  justify="center"
+                >
+                  <Col span={6} offset={6}>
+                    <h5>Time Elapsed</h5>
+                    {
+                      startTime
+                      ? (
+                        <DigitalClock
+                          hours={currentTime.getHours() - startTime.getHours()}
+                          minutes={currentTime.getMinutes() - startTime.getMinutes()}
+                          seconds={currentTime.getSeconds() - startTime.getSeconds()}
+                          size='sm'
+                        />)
+                      : <DigitalClock size='sm' />
+                    }
+                  </Col>
+                  <Col span={6}>
+                    <h5>Time Remaining</h5>
+                    {
+                      endTime
+                      ? (
+                        <TimeRemaining
+                          currentTime={currentTime}
+                          endTime={endTime}
+                          size='sm'
+                        />
+                      )
+                      : <DigitalClock size='sm' />
+                    }
+                  </Col>
+                </Row>
+              : null
+            }
+          <Footer>
+            <Settings
+              displaySettings={displaySettings}
+              displayTimers={displayTimers}
+              onSetEndTime={this.setEndTime}
+              onSetStartTime={this.setStartTime}
+              onToggleTimers={this.toggleTimers}
+              onToggleSettings={this.toggleSettings}
             />
-          </div>
-        </div>
-        {
-          displayTimers
-          ? <div className="row">
-              <div className="col-md-3 offset-md-3 col-sm-12">
-                <h5>Time Elapsed</h5>
-                {
-                  startTime
-                  ? (
-                    <DigitalClock
-                      hours={currentTime.getHours() - startTime.getHours()}
-                      minutes={currentTime.getMinutes() - startTime.getMinutes()}
-                      seconds={currentTime.getSeconds() - startTime.getSeconds()}
-                      size='sm'
-                    />)
-                  : <DigitalClock size='sm' />
-                }
-              </div>
-              <div className="col-md-3 col-xs-6">
-              <h5>Time Remaining</h5>
-              {
-                endTime
-                ? (
-                  <TimeRemaining
-                    currentTime={currentTime}
-                    endTime={endTime}
-                    size='sm'
-                  />
-                )
-                : <DigitalClock size='sm' />
-              }
-              </div>
-            </div>
-          : null
-        }
-        <Settings
-          displaySettings={displaySettings}
-          displayTimers={displayTimers}
-          onSetEndTime={this.setEndTime}
-          onSetStartTime={this.setStartTime}
-          onToggleTimers={this.toggleTimers}
-          onToggleSettings={this.toggleSettings}
-        />
-        </div>
-      </div>
+          </Footer>
+        </Content>
+      </Layout>
     )
   }
 }
