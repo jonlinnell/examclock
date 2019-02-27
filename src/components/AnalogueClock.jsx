@@ -6,6 +6,7 @@ import moment from 'moment';
 import TimeContext from '../context/TimeContext';
 
 import clockface from '../static/images/clockface.svg';
+import clockfaceInverted from '../static/images/clockface-dark.svg';
 
 const commonHandPositioning = css`
   position: absolute;
@@ -20,7 +21,8 @@ const AnalogueClockFace = styled.div`
   height: 60vh;
   border-radius: 50%;
 
-  background: url(${clockface}) center center no-repeat;
+  background: url(${({ theme: { type } }) => (type === 'light' ? clockface : clockfaceInverted)})
+    center center no-repeat;
 
   &:after {
     content: '';

@@ -1,5 +1,6 @@
 {
   "light": {
+    "type": "light",
     "colours": {
       "background": "#fcfcfc",
       "textPrimary": "#151010"
@@ -15,16 +16,17 @@
     }
   },
   "dark": {
+    "type": "dark",
     "colours": {
       "background": "#101010",
       "textPrimary": "#fcfcfc"
     },
     "analogueClock": {
       "colours": {
-        "pivot": "",
-        "hours": "",
-        "minutes": "",
-        "seconds": ""
+        "pivot": "#fcfcfc",
+        "hours": "#fcfcfc",
+        "minutes": "#fcfcfc",
+        "seconds": "#ec7152"
       },
       "handRadius": "10px"
     }
