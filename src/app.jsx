@@ -4,19 +4,21 @@ import { Router } from '@reach/router';
 import { ThemeProvider } from 'styled-components';
 
 import theme from './style/theme.json';
-
 import GlobalStyles from './style/GlobalStyles';
+import { TimeProvider } from './context/TimeContext';
 
-import Home from './pages/Home';
+import ExamClock from './pages/ExamClock';
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <main>
-      <GlobalStyles />
-      <Router>
-        <Home path="/" />
-      </Router>
-    </main>
+    <TimeProvider>
+      <main>
+        <GlobalStyles />
+        <Router>
+          <ExamClock path="/" />
+        </Router>
+      </main>
+    </TimeProvider>
   </ThemeProvider>
 );
 
