@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 12pt;
   }
 
+  * {
+    box-sizing: border-box !important;
+  }
+
   body {
     background-color: ${({ theme }) => theme.colours.background};
     color: ${({ theme }) => theme.colours.textPrimary};
