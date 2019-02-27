@@ -8,6 +8,8 @@ const AppSettingsContext = createContext();
 
 const AppSettingsProvider = ({ children }) => {
   const [theme, setThemeState] = useState(Object.assign({}, colours.light, styleOptions));
+  const [analogueClockVisibility, setAnalogueClockVisibility] = useState(true);
+  const [digitalClockVisibility, setDigitalClockVisibility] = useState(true);
 
   const setTheme = themeName => setThemeState(Object.assign({}, colours[themeName], styleOptions));
 
@@ -16,6 +18,10 @@ const AppSettingsProvider = ({ children }) => {
       value={{
         theme,
         setTheme,
+        setAnalogueClockVisibility,
+        setDigitalClockVisibility,
+        analogueClockVisibility,
+        digitalClockVisibility,
       }}
     >
       <ThemeProvider theme={theme}>{children}</ThemeProvider>

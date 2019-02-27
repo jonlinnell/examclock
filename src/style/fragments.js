@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 
 const commonTransitions = css`
-  transition: color 1s, background-color 1s;
+  transition: ${({ theme: { transitionDuration } }) => `color ${transitionDuration}, background-color ${transitionDuration}, border ${transitionDuration}`};
 `;
 
 export { commonTransitions };
