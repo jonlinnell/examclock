@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const FullPageSection = styled.div`
-  height: 100vh;
-  width: 100vw;
+const ExpandingSection = styled.div`
+  height: 100%;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -10,4 +10,4 @@ const FullPageSection = styled.div`
   align-items: center;
 `;
 
-export default FullPageSection;
+export default ExpandingSection;

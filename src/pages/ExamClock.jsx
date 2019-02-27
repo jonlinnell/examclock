@@ -3,13 +3,13 @@ import React from 'react';
 import AnalogueClock from '../components/AnalogueClock';
 import DigitalClock from '../components/DigitalClock';
 
-import FullPageSection from '../components/FullPageSection';
+import ExpandingSection from '../components/ExpandingSection';
 
 const Home = () => (
-  <FullPageSection>
+  <ExpandingSection>
     <AnalogueClock />
     <DigitalClock />
-  </FullPageSection>
+  </ExpandingSection>
 );
 
 export default Home;
