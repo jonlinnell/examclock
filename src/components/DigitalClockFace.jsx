@@ -3,9 +3,10 @@ import styled from 'styled-components';
 const DigitalClockFace = styled.ul`
   list-style: none;
 
+  text-align: center;
   font-family: 'Lato', sans-serif;
   font-weight: 200;
-  font-size: 18rem;
+  font-size: 10vh;
 
   & :nth-child(2) {
   }
