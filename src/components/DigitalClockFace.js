@@ -8,6 +8,9 @@ const DigitalClockFace = styled.ul`
   font-weight: 200;
   font-size: 10vh;
 
+  color: ${({ theme }) => theme.colours.textPrimary};
+  transition: color 1s;
+
   & :nth-child(2) {
   }
 `;

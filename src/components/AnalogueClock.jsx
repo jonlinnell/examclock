@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import moment from 'moment';
 
 import TimeContext from '../context/TimeContext';
+import { commonTransitions } from '../style/fragments';
 
 import clockface from '../static/images/clockface.svg';
 import clockfaceInverted from '../static/images/clockface-dark.svg';
@@ -24,27 +25,31 @@ const AnalogueClockFace = styled.div`
   background: url(${({ theme: { type } }) => (type === 'light' ? clockface : clockfaceInverted)})
     center center no-repeat;
 
+  transition: background 1s;
+
   &:after {
     content: '';
     display: block;
     width: 1.8vh;
     height: 1.8vh;
-    background: ${({ theme }) => theme.analogueClock.colours.pivot};
+    background-color: ${({ theme }) => theme.analogueClock.colours.pivot};
     position: absolute;
     left: 50%;
     top: 50%;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
+    transition: background-color 1s;
   }
 `;
 
 const HourHand = styled.div`
   ${commonHandPositioning}
+  ${commonTransitions}
 
   width: 1vh;
   height: 30%;
-  background: ${({ theme }) => theme.analogueClock.colours.hours};
+  background-color: ${({ theme }) => theme.analogueClock.colours.hours};
   z-index: 2;
   border-radius: ${({
     theme: {
@@ -57,10 +62,11 @@ const HourHand = styled.div`
 
 const MinuteHand = styled.div`
   ${commonHandPositioning}
+  ${commonTransitions}
 
   width: 0.7vh;
   height: 40%;
-  background: ${({ theme }) => theme.analogueClock.colours.minutes};
+  background-color: ${({ theme }) => theme.analogueClock.colours.minutes};
   z-index: 2;
   border-radius: ${({
     theme: {
@@ -74,10 +80,11 @@ const MinuteHand = styled.div`
 
 const SecondHand = styled.div`
   ${commonHandPositioning}
+  ${commonTransitions}
 
   width: 0.3vh;
   height: 50%;
-  background: ${({ theme }) => theme.analogueClock.colours.seconds};
+  background-color: ${({ theme }) => theme.analogueClock.colours.seconds};
   z-index: 3;
   border-radius: ${({
     theme: {

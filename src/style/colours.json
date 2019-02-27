@@ -11,8 +11,7 @@
         "hours": "#151010",
         "minutes": "#151010",
         "seconds": "#932a10"
-      },
-      "handRadius": "10px"
+      }
     }
   },
   "dark": {
@@ -27,8 +26,7 @@
         "hours": "#dadada",
         "minutes": "#dadada",
         "seconds": "#ec7152"
-      },
-      "handRadius": "10px"
+      }
     }
   }
 }

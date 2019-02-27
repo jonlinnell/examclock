@@ -3,11 +3,14 @@ import styled from 'styled-components';
 import { render } from 'react-dom';
 import { Router } from '@reach/router';
 
-import GlobalStyles from './style/GlobalStyles';
+import 'antd/dist/antd.css';
+
+import GlobalStyles from './style/GlobalStyle';
 import { TimeProvider } from './context/TimeContext';
 import { AppSettingsProvider } from './context/AppSettingsContext';
 
 import ExamClock from './pages/ExamClock';
+import ControlBar from './components/ControlBar';
 
 const ViewMain = styled.div`
   min-height: 100vh;
@@ -25,7 +28,7 @@ const App = () => (
         <Router>
           <ExamClock path="/" />
         </Router>
-        <div>yo yoooo</div>
+        <ControlBar />
       </ViewMain>
     </TimeProvider>
   </AppSettingsProvider>

@@ -1,14 +1,15 @@
 import React, { createContext, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import themes from '../style/theme.json';
+import colours from '../style/colours.json';
+import styleOptions from '../style/styleOptions.json';
 
 const AppSettingsContext = createContext();
 
 const AppSettingsProvider = ({ children }) => {
-  const [theme, setThemeState] = useState(themes.light);
+  const [theme, setThemeState] = useState(Object.assign({}, colours.light, styleOptions));
 
-  const setTheme = themeName => setThemeState(themes[themeName]);
+  const setTheme = themeName => setThemeState(Object.assign({}, colours[themeName], styleOptions));
 
   return (
     <AppSettingsContext.Provider
