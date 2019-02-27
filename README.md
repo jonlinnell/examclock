@@ -1,29 +1,39 @@
-# examclock
-A simple display clock for timing exams (or any other event that requires a clock on display and preset timing.)
+# Minimal Frontend Boilerplate
 
-View the [live demo](https://jonlinnell.github.io/demos/examclock/).
+Including:
 
-## Usage
-Install dependencies
-```shell
-yarn
+- React 16.8 (the one with hooks)
+- Styled Components
+- Parcel
+- Babel 7
+- ESLint and Prettier
+
+## Description
+A minimal quick-start boilerplate for frontend projects using contemporary libraries and tooling.
+This is mostly for my own convenience.
+
+## Run
+To run a local build:
+
+```console
+yarn run
 ```
-or
-```shell
-npm install
-```
-... if that's your thing.
 
-You can test the app with
-```shell
-yarn start
-```
+## Build
+To create an optimised build in `dist/` :
 
-... and you can create a production build in the *dist* directory with
-```shell
+```console
 yarn build
 ```
 
-## Customisation
+## Lint
+This project includes a husky/git pre-commit hook to run `prettier --write` and `eslint --fix` on staged files.
 
-Colours can be customised in the *src/styles/colours.scss* file. There are plans for more extensive customisation and branding options in the future.
+To manually lint:
+
+```console
+yarn lint
+```
+
+## Contributing
+Please do. PRs for better code are welcome!
