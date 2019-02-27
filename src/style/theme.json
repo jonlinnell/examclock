@@ -2,13 +2,31 @@
   "light": {
     "colours": {
       "background": "#fcfcfc",
-      "textPrimary": "#101010"
+      "textPrimary": "#151010"
+    },
+    "analogueClock": {
+      "colours": {
+        "pivot": "#151010",
+        "hours": "#151010",
+        "minutes": "#151010",
+        "seconds": "#932a10"
+      },
+      "handRadius": "10px"
     }
   },
   "dark": {
     "colours": {
       "background": "#101010",
       "textPrimary": "#fcfcfc"
+    },
+    "analogueClock": {
+      "colours": {
+        "pivot": "",
+        "hours": "",
+        "minutes": "",
+        "seconds": ""
+      },
+      "handRadius": "10px"
     }
   }
 }

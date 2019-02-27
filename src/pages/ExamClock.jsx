@@ -1,11 +1,11 @@
 import React from 'react';
 
-import DigitalClock from '../components/DigitalClock';
+import AnalogueClock from '../components/AnalogueClock';
 import FullPageSection from '../components/FullPageSection';
 
 const Home = () => (
   <FullPageSection>
-    <DigitalClock />
+    <AnalogueClock />
   </FullPageSection>
 );
 
