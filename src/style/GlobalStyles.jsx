@@ -9,8 +9,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #fcfcfc;
-    
+    background-color: ${({ theme }) => theme.colours.background};
+    color: ${({ theme }) => theme.colours.textPrimary};
+
     font-family: 'Lato', sans-serif;
   }
 `;

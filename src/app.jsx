@@ -1,16 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router } from '@reach/router';
-import { ThemeProvider } from 'styled-components';
 
-import theme from './style/theme.json';
 import GlobalStyles from './style/GlobalStyles';
 import { TimeProvider } from './context/TimeContext';
+import { AppSettingsProvider } from './context/AppSettingsContext';
 
 import ExamClock from './pages/ExamClock';
 
 const App = () => (
-  <ThemeProvider theme={theme}>
+  <AppSettingsProvider>
     <TimeProvider>
       <main>
         <GlobalStyles />
@@ -19,7 +18,7 @@ const App = () => (
         </Router>
       </main>
     </TimeProvider>
-  </ThemeProvider>
+  </AppSettingsProvider>
 );
 
 render(<App />, document.getElementById('root'));

@@ -1,1 +1,14 @@
-{}
+{
+  "light": {
+    "colours": {
+      "background": "#fcfcfc",
+      "textPrimary": "#101010"
+    }
+  },
+  "dark": {
+    "colours": {
+      "background": "#101010",
+      "textPrimary": "#fcfcfc"
+    }
+  }
+}
