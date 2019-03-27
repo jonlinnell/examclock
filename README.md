@@ -1,35 +1,23 @@
-# Minimal Frontend Boilerplate
+# Examclock
 
-Including:
+![alt text](https://raw.githubusercontent.com/jonlinnell/examclock/master/docs/clock_light.png)
+![alt text](https://raw.githubusercontent.com/jonlinnell/examclock/master/docs/clock_dark.png)
 
-- React 16.8 (the one with hooks)
-- Styled Components
-- Parcel
-- Babel 7
-- ESLint and Prettier
 
 ## Description
-A minimal quick-start boilerplate for frontend projects using contemporary libraries and tooling.
-This is mostly for my own convenience.
+A full-screen in-browser display clock, ideal for exams or any situation when a large group of people need to look at the same clock.
 
 ## Run
-To run a local build:
-
 ```console
 yarn run
 ```
 
 ## Build
-To create an optimised build in `dist/` :
+Outputs to `dist/`
 
 ```console
 yarn build
 ```
-
-## Lint
-This project includes a husky/git pre-commit hook to run `prettier --write` and `eslint --fix` on staged files.
-
-To manually lint:
 
 ```console
 yarn lint
