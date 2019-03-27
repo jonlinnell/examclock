@@ -1,8 +1,9 @@
 # Examclock
 A full-screen in-browser display clock, ideal for exams or any situation when a large group of people need to look at the same clock.
 
-![alt text](https://raw.githubusercontent.com/jonlinnell/examclock/master/docs/clock_light.png)
-![alt text](https://raw.githubusercontent.com/jonlinnell/examclock/master/docs/clock_dark.png)
+Light theme             |  Dark theme
+:-------------------------:|:-------------------------:
+![Light theme](https://raw.githubusercontent.com/jonlinnell/examclock/master/docs/clock_light.png)  |  ![Dark theme](https://raw.githubusercontent.com/jonlinnell/examclock/master/docs/clock_dark.png)
 
 ## Description
 This project uses the excellent [Parcel](https://github.com/parcel-bundler/parcel) bundler, so read up on that if you want to customise the build toolchain/process.
