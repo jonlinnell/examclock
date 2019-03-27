@@ -10,6 +10,9 @@ const StyledControlBar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  padding-bottom: 24px;
+  padding-left: 24px;
 `;
 
 const ControlBar = () => {

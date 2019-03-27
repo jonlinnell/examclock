@@ -18,8 +18,8 @@ const commonHandPositioning = css`
 
 const AnalogueClockFace = styled.div`
   transform: scale(0.8);
-  width: 60vh;
-  height: 60vh;
+  width: 80vh;
+  height: 80vh;
   border-radius: 50%;
 
   background: url(${({ theme: { type } }) => (type === 'light' ? clockface : clockfaceInverted)})

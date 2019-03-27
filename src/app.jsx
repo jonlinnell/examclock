@@ -16,8 +16,6 @@ const ViewMain = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-rows: 1fr auto;
-
-  padding: 24px;
 `;
 
 const App = () => (
